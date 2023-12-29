@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import "reset.css";
+
+      body {
+        margin: 15px 15px 15px 15px;
+        border: 1px solid lightgray;
+        border-radius: 20px;
+      }
+
+      /* header 부분 */
+      header {
+        padding-bottom: 10px;
+      }
+
+      .info-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ededef;
+        margin: 10px 10px 10px 10px;
+      }
+
+      .info-bar__left {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .info-bar__icon {
+        width: 20px;
+        margin-top: 8px;
+        margin-right: 15px;
+        margin-left: 2px;
+      }
+
+      .info-bar__info-name {
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+
+      .info-bar__info-temp {
+        width: 46px;
+        border-radius: 30px;
+        border: 1px solid black;
+        font-size: smaller;
+        font-weight: bold;
+        text-align: center;
+        padding: 3px 0 2px 0;
+        margin-bottom: 7px;
+      }
+
+      .info-bar__info-cont {
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 4px;
+      }
+
+      .info-bar__left-flex2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info-bar__right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+
+      .info-bar__right img {
+        width: 23px;
+        margin-left: 5px;
+        margin-right: 3px;
+      }
+
+      .menu-bar {
+        border-bottom: 1px solid #ededef;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .menu-bar__photo {
+        width: 100px;
+        margin-left: 10px;
+      }
+
+      .menu-bar__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 10px;
+      }
+
+      .menu-bar__info-title {
+        margin-top: 26px;
+        margin-bottom: 10px;
+      }
+
+      .menu-bar__info-price {
+        font-weight: bold;
+      }
+
+      /* main 부분 */
+      .content {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 20px 10px 0 0;
+      }
+
+      .content__time {
+        color: gray;
+        font-size: 13px;
+        padding: 20px 5px 0 0;
+      }
+
+      .content__content {
+        background-color: rgba(254, 111, 15, 0.8);
+        padding: 8px 10px 8px 10px;
+        border-radius: 15px 0 15px 15px;
+        color: oldlace;
+      }
+
+      .content2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px 0 10px 1dvh;
+      }
+
+      .content2__img {
+        width: 20px;
+        padding: 5px 5px 0 0;
+      }
+
+      .content2__content {
+        background-color: #eaebee;
+        padding: 8px 10px 8px 10px;
+        border-radius: 0 15px 15px 15px;
+      }
+
+      .content2__time {
+        color: gray;
+        font-size: 13px;
+        padding: 20px 0 0 5px;
+      }
+
+      .content3 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        width: 80%;
+        height: 80px;
+        margin-left: 10%;
+      }
+
+      .content3__img {
+        width: 15px;
+        padding: 20px 15px 0 30px;
+      }
+
+      .content3__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+      }
+
+      .content3__content-time {
+        font-weight: bold;
+        padding: 20px 0 10px 0;
+      }
+
+      .content3__content-cont {
+        font-size: 15px;
+      }
+
+      .content4 {
+        text-align: center;
+        color: gray;
+        font-size: 15px;
+        padding: 15px 0 15px 0;
+      }
+
+      .content5 {
+        width: auto;
+        height: 400px;
+      }
+
+      /* footer 부분 */
+      footer {
+        background-color: #eaebee;
+        border-radius: 0 0 20px 20px;
+        height: 40px;
+      }
+
+      .chat-bar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .chat-bar__icon {
+        width: 20px;
+        padding: 10px 10px 10px 10px;
+      }
+
+      .chat-bar__input {
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .chat-bar__input img {
+        width: 20px;
+        position: absolute;
+        right: 8px;
+        top: 6px;
+      }
+
+      .chat-bar__input-btn {
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        background-color: rgb(254, 111, 15);
+        border-radius: 50%;
+        right: 7px;
+        top: 4px;
+      }
+
+      input {
+        border-radius: 15px;
+        border: 1px solid #eaebee;
+        color: #eaebee;
+        width: 300px;
+        height: 28px;
+      }
+
+      input::placeholder {
+        color: #eaebee;
+        padding: 10px 0 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="info-bar">
+        <div class="info-bar__left">
+          <div class="info-bar__icon">
+            <img src="assets/arrow-left.svg" alt="" />
+          </div>
+          <div class="info-bar__left-flex">
+            <div class="info-bar__left-flex2">
+              <div class="info-bar__info-name">슬기맘</div>
+              <div class="info-bar__info-temp">36.5℃</div>
+            </div>
+            <div class="info-bar__info-cont">보통 1시간 이내 응답</div>
+          </div>
+        </div>
+        <div class="info-bar__right">
+          <img src="assets/phone.svg" alt="" />
+          <img src="assets/list.svg" alt="" />
+        </div>
+      </div>
+      <div class="menu-bar">
+        <div class="menu-bar__photo">
+          <img src="assets/photo.svg" alt="" />
+        </div>
+        <div class="menu-bar__info">
+          <div class="menu-bar__info-title">유모차 팔아요</div>
+          <div class="menu-bar__info-price">50,000원</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="content__time">오후 3:45</div>
+        <div class="content__content">
+          오늘 시민공원 근처에서 7시에 가능하신가요?
+        </div>
+      </div>
+
+      <div class="content2">
+        <div class="content2__img">
+          <img src="assets/photo.svg" alt="" />
+        </div>
+        <div class="content2__content">네 가능해요 그때 봐요!</div>
+        <div class="content2__time">오후 3:45</div>
+      </div>
+
+      <div class="content3">
+        <div class="content3__img">
+          <img src="assets/calendar.svg" alt="" />
+        </div>
+        <div class="content3__content">
+          <div class="content3__content-time">4월 28일(수) 오후 7:00</div>
+          <div class="content3__content-cont">
+            슬기맘님이 거래 약속을 설정했어요.
+          </div>
+        </div>
+      </div>
+
+      <div class="content4">
+        약속 시간 30분 전에 슬기맘님에게 알림이 울릴 거예요.
+      </div>
+
+      <div class="content5"></div>
+    </main>
+
+    <footer>
+      <div class="chat-bar">
+        <div class="chat-bar__icon"><img src="assets/plus.svg" alt="" /></div>
+        <div class="chat-bar__input">
+          <input type="text" placeholder="메시지를 입력하세요." />
+          <img src="assets/smile.svg" alt="" />
+          <div class="chat-bar__input-btn"></div>
+        </div>
+        <div class="chat-bar__icon">
+          <img src="assets/airplane.svg" alt="" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
